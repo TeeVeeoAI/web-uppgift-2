@@ -1,4 +1,4 @@
-.root{
+:root{
     --primcol: #FF6B6B;
     --seccol: #FFE66D;
     --acccol: #4ECDC4;
@@ -10,21 +10,100 @@
     padding: 0;
 }
 
-body{
+html, body{
     background: var(--baccol);
+    height: 100%;
 }
 
 .grid-container{
+
     display: grid;
     grid-template-columns: 1% 1fr 1fr 1fr 1%;
     grid-template-rows: 1fr 0.6fr 3fr 3fr 1fr;
 
     grid-template-areas: 
     ". header header header ."
-    ". navigation navigation navigation ."
-    ". side-1 content-1 content-2 ."
-    ". side-1 content-3 content-3 ."
+    ". nav nav nav ."
+    ". aside content content ."
+    ". aside content content ."
     ". footer footer footer .";
+}
+
+.grid-container *{
+    min-height: 45px;
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: nav;
+}
+
+nav ul{
+    display: block;
+    list-style: none;
+    text-align: center;
+    overflow: hidden;
+}
+
+nav a{
+    color: var(--acccol);
+    text-decoration: none;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 2em;
+    border-radius: 10px;
+    height: 45px;
+}
+
+nav a:hover{
+    background-color: #000000f5;
+    transition: 0.25s;
+}
+
+nav li{
+    float: left;
+}
+
+aside{
+    grid-area: aside;
+}
+
+.side-2{
+    visibility: hidden;
+}
+
+.content{
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 3fr;
+
+    grid-template-areas: 
+    "content-1 content-2"
+    "content-3 content-3";
+}
+
+.content-1{
+    grid-area: content-1;
+}
+
+.content-2{
+    grid-area: content-2;
+}
+
+.content-3{
+    grid-area: content-3;
+}
+
+footer{
+    grid-area: footer;
+}
+main{
+    visibility: hidden;
 }
 
 @media (max-width: 600px) {
@@ -36,8 +115,28 @@ body{
         grid-template-areas: 
         ". header ."
         ". nav ."
-        ". side-1 ."
+        ". main ." 
+        ". main ."
+        ". aside ."
         ". side-2 ."
         ". footer .";
+    }
+    .grid-container *{
+        min-height: 50px;
+    }
+
+    .side-2{
+        visibility: visible;
+        grid-area: side-2;
+    }
+
+    main{
+        grid-area: main;
+        visibility: visible;
+    }
+
+    .content{
+        visibility: hidden;
+        display: none;
     }
 }

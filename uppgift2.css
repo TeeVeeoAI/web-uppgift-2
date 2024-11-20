@@ -15,6 +15,46 @@ html, body{
     height: 100%;
 }
 
+#formular {
+    width: 600px;
+    border: 5px solid var(--seccol);
+    border-radius: 10px;
+    background-color: var(--primcol);
+    padding: 20px;
+    font-size: 16px;
+    grid-area: content;
+}
+    
+#formular input[type=text],
+#formular input[type=email], textarea {
+    width: 100%;
+    padding: 10px 5px 10px 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: 1px solid var(--seccol);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+    
+#formular input[type=submit] {
+    width: 100%;
+    background-color: var(--acccol);
+    color: var(--textcol);
+    padding: 15px 20px;
+    margin: 10px 0;
+    border: ridge 5px var(--seccol);
+    border-radius: 4px;
+    cursor: crosshair;
+    font-size: 18px;
+}
+    
+#formular input[type=submit]:hover {
+    background-color: #3AADC4;
+    border: groove 5px var(--seccol);
+    transition: 0.25s;
+}
+
 .grid-container{
 
     display: grid;
@@ -39,6 +79,7 @@ header{
 
 nav{
     grid-area: nav;
+    padding-bottom: 10px;
 }
 
 nav ul{
@@ -49,7 +90,7 @@ nav ul{
 }
 
 nav a{
-    color: var(--acccol);
+    color: var(--textcol);
     text-decoration: none;
     display: block;
     padding-left: 10px;
@@ -57,11 +98,13 @@ nav a{
     font-size: 2em;
     border-radius: 10px;
     height: 45px;
+    border: ridge var(--primcol) 6px;
 }
 
 nav a:hover{
-    background-color: #000000f5;
+    background-color: var(--acccol);
     transition: 0.25s;
+    border: groove var(--primcol) 4px;
 }
 
 nav li{
@@ -138,5 +181,9 @@ main{
     .content{
         visibility: hidden;
         display: none;
+    }
+    #formular{
+        grid-area: main;
+        width: 90%;
     }
 }

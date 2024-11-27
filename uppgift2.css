@@ -36,6 +36,10 @@ html, body{
     box-sizing: border-box;
     font-size: 18px;
 }
+
+#formular textarea{
+    resize: vertical;
+}
     
 #formular input[type=submit] {
     width: 100%;
@@ -56,7 +60,6 @@ html, body{
 }
 
 .grid-container{
-
     display: grid;
     grid-template-columns: 1% 1fr 1fr 1fr 1%;
     grid-template-rows: 1fr 0.6fr 3fr 3fr 1fr;
@@ -77,9 +80,15 @@ header{
     grid-area: header;
 }
 
+h1{
+    font-size: 4em;
+}
+
 nav{
     grid-area: nav;
     padding-bottom: 10px;
+    position: sticky;
+    top: 0;
 }
 
 nav ul{
@@ -123,7 +132,7 @@ aside{
     grid-area: content;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 3fr 3fr;
+    grid-template-rows: 1fr 1fr;
 
     grid-template-areas: 
     "content-1 content-2"

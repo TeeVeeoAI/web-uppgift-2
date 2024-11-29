@@ -8,6 +8,7 @@
 *{
     margin: 0;
     padding: 0;
+    color: var(--textcol);
 }
 
 html, body{
@@ -15,16 +16,49 @@ html, body{
     height: 100%;
 }
 
-#formular {
+#formular{
     width: 600px;
-    border: 5px solid var(--seccol);
     border-radius: 10px;
-    background-color: var(--primcol);
     padding: 20px;
     font-size: 16px;
     grid-area: content;
+    position: relative;
+    z-index: 1;
 }
-    
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+#formular::before, #formular::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-image: conic-gradient(from var(--angle),var(--primcol), var(--acccol), var(--primcol), var(--acccol), var(--primcol), var(--acccol), var(--primcol), var(--acccol), var(--primcol));
+    border-radius: 10px;
+    animation: 10s spin linear infinite;
+    border: solid 5px var(--seccol);
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+#formular::before{
+    filter: blur(1.5rem);
+}
+
 #formular input[type=text],
 #formular input[type=email], textarea {
     width: 100%;
@@ -39,6 +73,7 @@ html, body{
 
 #formular textarea{
     resize: vertical;
+    min-height: 250px;
 }
     
 #formular input[type=submit] {
@@ -89,6 +124,7 @@ nav{
     padding-bottom: 10px;
     position: sticky;
     top: 0;
+    margin: 10px;
 }
 
 nav ul{

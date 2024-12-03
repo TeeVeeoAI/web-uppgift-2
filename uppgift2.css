@@ -26,6 +26,7 @@ html, body{
     z-index: 1;
     margin-left: 40px;
 }
+
 @property --angle{
     syntax: "<angle>";
     initial-value: 0deg;
@@ -129,10 +130,14 @@ nav{
 }
 
 nav ul{
+    position: sticky;
+    top: 0;
     display: block;
     list-style: none;
     text-align: center;
     overflow: hidden;
+    background: var(--baccol);
+    z-index: 2;
 }
 
 nav a{
@@ -145,10 +150,11 @@ nav a{
     border-radius: 10px;
     height: 45px;
     border: ridge var(--primcol) 6px;
+    background: var(--baccol);
 }
 
 nav a:hover{
-    background-color: var(--acccol);
+    background: var(--acccol);
     transition: 0.25s;
     border: groove var(--primcol) 4px;
 }
@@ -176,6 +182,11 @@ aside{
     "content-3 content-3";
 }
 
+.content *{
+    margin: 5px;
+    font-size: 1.1em;
+}
+
 .content-1{
     grid-area: content-1;
 }
@@ -191,9 +202,6 @@ aside{
 footer{
     grid-area: footer;
 }
-main{
-    visibility: hidden;
-}
 
 @media (max-width: 600px) {
     .grid-container{
@@ -204,9 +212,9 @@ main{
         grid-template-areas: 
         ". header ."
         ". nav ."
-        ". main ." 
+        ". aside ." 
         ". main ."
-        ". aside ."
+        ". main ."
         ". side-2 ."
         ". footer .";
     }
@@ -219,14 +227,8 @@ main{
         grid-area: side-2;
     }
 
-    main{
-        grid-area: main;
-        visibility: visible;
-    }
-
     .content{
-        visibility: hidden;
-        display: none;
+        grid-area: main;
     }
     #formular{
         grid-area: main;

@@ -163,7 +163,7 @@ nav li{
     float: left;
 }
 
-aside{
+.side-1{
     grid-area: aside;
 }
 
@@ -182,9 +182,15 @@ aside{
     "content-3 content-3";
 }
 
-.content *{
+.content *, .side-1 *{
     margin: 5px;
     font-size: 1.1em;
+}
+
+.grid-container h2{
+    border: solid var(--primcol) 2px;
+    border-radius: 30px;
+    padding: 20px 0 0 10px;
 }
 
 .content-1{

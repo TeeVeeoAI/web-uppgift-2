@@ -193,6 +193,10 @@ nav li{
     padding: 20px 0 0 10px;
 }
 
+.grid-container p{
+    padding: 0 0 0 10px
+}
+
 .content-1{
     grid-area: content-1;
 }

@@ -187,10 +187,6 @@ nav li{
     grid-area: aside;
 }
 
-.side-2{
-    visibility: hidden;
-}
-
 .content{
     grid-area: content;
     display: grid;
@@ -255,11 +251,6 @@ footer h2{
     }
     .grid-container *{
         min-height: 50px;
-    }
-
-    .side-2{
-        visibility: visible;
-        grid-area: side-2;
     }
 
     .content{

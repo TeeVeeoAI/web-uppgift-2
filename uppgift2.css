@@ -171,12 +171,11 @@ nav a{
     height: 45px;
     border: ridge var(--primcol) 6px;
     background: var(--baccol);
-}
-
-nav a:hover{
-    background: var(--acccol);
-    transition: 0.25s;
-    border: groove var(--primcol) 4px;
+    &:hover{
+        background: var(--acccol);
+        transition: 0.25s;
+        border: groove var(--primcol) 4px;
+    }
 }
 
 nav li{
@@ -259,9 +258,9 @@ footer{
         ". main ."
         ". main ."
         ". footer .";
-    }
-    .grid-container *{
-        min-height: 50px;
+        *{
+            min-height: 50px;
+        }
     }
 
     .content{
